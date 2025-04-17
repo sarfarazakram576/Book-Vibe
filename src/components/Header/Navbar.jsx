@@ -43,10 +43,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn mr-2 btn-success font-bold p-3">
+                    <button className="btn mr-2 btn-success text-white font-semibold p-3">
                         Sign In
                     </button>
-                    <button className="btn btn-accent font-bold p-3">Sign Up</button>
+                    <button className="btn btn-accent text-white font-semibold p-3">Sign Up</button>
                 </div>
             </div>
         </div>
