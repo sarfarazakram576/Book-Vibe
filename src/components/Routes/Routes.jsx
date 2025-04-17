@@ -16,9 +16,9 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: '/details',
-        Component: BookDetails
-      }
+        path: "/details",
+        Component: BookDetails,
+      },
     ],
   },
 ]);
