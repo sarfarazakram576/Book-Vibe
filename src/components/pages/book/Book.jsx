@@ -1,5 +1,5 @@
 import React from "react";
-import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaRegStarHalfStroke } from "react-icons/fa6";
 const Book = ({ book }) => {
   const { tags, image, bookName, author, category, rating } = book;
   return (
@@ -27,9 +27,8 @@ const Book = ({ book }) => {
           </p>
           <small>
             {" "}
-            <FaRegStar className="mt-[.12rem]" />
+            <FaRegStarHalfStroke className="mt-[.12rem]" />
           </small>
-          <FaStar className="hidden text-red-500" />
         </div>
       </div>
     </div>
