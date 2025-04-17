@@ -5,7 +5,7 @@ import Navbar from "../../Header/Navbar";
 
 const Root = () => {
   return (
-    <div>
+    <div className="max-w-full sm:container mx-auto">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>
