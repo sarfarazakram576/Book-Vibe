@@ -2,9 +2,9 @@ import React from "react";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
 import { Link } from "react-router";
 const Book = ({ book }) => {
-  const { tags, image, bookName, author, category, rating, yearOfPublishing } = book;
+  const { bookId, tags, image, bookName, author, category, rating, yearOfPublishing } = book;
   return (
-   <Link to='/details'>
+   <Link to={`/bookDetails/${bookId}`}>
     <div className="p-4 border rounded-xl shadow-xl md:h-[26rem]">
       <div className="bg-gray-100 flex justify-center items-center mx-auto p-3 rounded-lg">
         <img src={image} className="w-20 h-32" />
