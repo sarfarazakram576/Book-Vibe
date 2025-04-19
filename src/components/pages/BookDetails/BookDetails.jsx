@@ -1,11 +1,13 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { addReadBooksToLs, addWishlistBooksToLs } from "../../../utility/addToLs";
 
 const BookDetails = () => {
   const { id } = useParams();
   const books = useLoaderData();
   const book = books.find((book) => book.bookId === parseInt(id));
   const {
+    bookId,
     image,
     tags,
     category,
@@ -17,6 +19,13 @@ const BookDetails = () => {
     yearOfPublishing,
     rating,
   } = book;
+
+  const handleReadlist = (id)=>{
+    addReadBooksToLs(id)
+  }
+  const handleWishlist = (id)=>{
+    addWishlistBooksToLs(id)
+  }
   return (
     <div className="flex gap-12 mt-16 items-center">
       <div className="w-[48%] p-12 rounded-xl flex justify-center bg-gray-100">
@@ -31,17 +40,16 @@ const BookDetails = () => {
         <p className="mb-2">
           <span className="font-semibold">Review:</span> <small>{review}</small>
         </p>
-        <p className="mb-2 pb-2 border-b border-gray-400">
+        <div className="mb-2 pb-2 border-b border-gray-400">
           <span className="mr-4 font-semibold">Tag</span>{" "}
-          {tags.map((tag, index) => (
-            <div
-              key={index}
+          {tags.map((tag,index) => (
+            <div key={index}
               className="badge badge-soft font-semibold badge-success mr-2 my-4"
             >
               #{tag}
             </div>
           ))}
-        </p>
+        </div>
         <div className="flex gap-8 mb-6">
           <div className="text-[#13131370] font-semibold">
             <p>
@@ -75,8 +83,8 @@ const BookDetails = () => {
         </div>
 
         <div className="flex gap-4 mt-2">
-            <button className="btn border-2 font-semibold">Read</button>
-            <button className="btn btn-accent text-white font-semibold">Wishlist</button>
+            <button onClick={()=>{handleReadlist(bookId)}} className="btn border-2 font-semibold">Read</button>
+            <button onClick={()=>handleWishlist(bookId)} className="btn btn-accent text-white font-semibold">Wishlist</button>
         </div>
       </div>
     </div>
