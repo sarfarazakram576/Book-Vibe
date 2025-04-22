@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { getStoredWishlistBooks } from "../../../utility/addToLs";
 import {
   BarChart,
