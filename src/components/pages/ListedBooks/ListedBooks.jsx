@@ -14,8 +14,8 @@ const ListedBooks = () => {
   const books = useLoaderData();
   const [readlist, setReadlist] = useState([]);
   const [wishlist, setWishlist] = useState([]);
-
   useEffect(() => {
+    document.title = "Book Vibe | Listed Books";
     const storedReadlistBooks = getStoredReadBooks();
     const readlist = storedReadlistBooks.map((id) =>
       books.find((book) => book.bookId === id)

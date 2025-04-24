@@ -13,6 +13,11 @@ import {
 } from "recharts";
 
 const PageToRead = () => {
+  useEffect(()=>{
+    document.title = "Book Vibe | Page To Read";
+   },[])
+
+   
   const books = useLoaderData();
   const [wishlist, setWishlist] = useState([]);
 
@@ -43,7 +48,6 @@ const PageToRead = () => {
   const COLORS = data.map(
     (_, i) => `hsl(${(i * 360) / data.length}, 70%, 50%)`
   );
-
   return (
    <div>
     {
